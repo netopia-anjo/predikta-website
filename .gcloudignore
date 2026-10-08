@@ -1,0 +1,11 @@
+.gcloudignore
+.git
+.gitignore
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.env.*
+AGENTS.md
+README.md
+tests/

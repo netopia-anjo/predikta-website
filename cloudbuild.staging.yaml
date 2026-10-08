@@ -1,0 +1,59 @@
+# These environment details are copied from AGENTS.md. Update before enabling.
+steps:
+  - id: check-staging-branch
+    name: ubuntu
+    entrypoint: bash
+    args:
+      - -ceu
+      - |
+        test "$BRANCH_NAME" = "staging"
+        test -n "$COMMIT_SHA"
+  - id: build-website
+    name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - --platform=linux/amd64
+      - -t
+      - ${_REGISTRY_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$COMMIT_SHA
+      - .
+  - id: push-website
+    name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - ${_REGISTRY_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$COMMIT_SHA
+  - id: deploy-staging
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_SERVICE}
+      - --project=$PROJECT_ID
+      - --region=${_REGION}
+      - --image=${_REGISTRY_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$COMMIT_SHA
+      - --labels=source-sha=$COMMIT_SHA,environment=staging
+      - --port=8080
+      - --allow-unauthenticated
+      - --quiet
+  - id: serve-staging-version
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: gcloud
+    args:
+      - run
+      - services
+      - update-traffic
+      - ${_SERVICE}
+      - --project=$PROJECT_ID
+      - --region=${_REGION}
+      - --to-latest
+      - --quiet
+images:
+  - ${_REGISTRY_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:$COMMIT_SHA
+substitutions:
+  _SERVICE: netopia-website
+  _REGION: europe-west1
+  _REGISTRY_REGION: europe-west1
+  _REPOSITORY: websites
+  _IMAGE: predikta-website
+options:
+  logging: CLOUD_LOGGING_ONLY

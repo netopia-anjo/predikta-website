@@ -1,0 +1,28 @@
+# Production reuses staging's immutable image; it never rebuilds the website.
+steps:
+  - id: check-production-branch
+    name: ubuntu
+    entrypoint: bash
+    args:
+      - -ceu
+      - |
+        test "$BRANCH_NAME" = "main"
+        test -n "$COMMIT_SHA"
+  - id: promote-reviewed-staging
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: python3
+    args:
+      - deployment/promote.py
+      - --project=$PROJECT_ID
+      - --commit=$COMMIT_SHA
+      - --staging-service=${_STAGING_SERVICE}
+      - --staging-region=${_STAGING_REGION}
+      - --production-service=${_SERVICE}
+      - --production-region=${_REGION}
+substitutions:
+  _STAGING_SERVICE: netopia-website
+  _STAGING_REGION: europe-west1
+  _SERVICE: netopia-website
+  _REGION: asia-southeast1
+options:
+  logging: CLOUD_LOGGING_ONLY
