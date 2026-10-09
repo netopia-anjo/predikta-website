@@ -866,7 +866,7 @@ button.link{background:none;border:0;margin:0;cursor:pointer;font-family:inherit
         <p class="hero-sub" data-load style="--d:.55s">Decode the Behavioral DNA of the Filipino Market. So you can test every ad, offer, and idea before launch.</p>
         <div class="hero-ctas" data-load style="--d:.7s">
           <a class="btn btn-white" href="https://app.predikta.ai/login" target="_blank" rel="noopener" data-trial>Try it Now for Free<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSe8JEOA2EhMzdzyRiSSx30fUWKxOo9dDRcXpkWkTJAptKvqMA/viewform?usp=sharing&amp;ouid=112665294642381495824" target="_blank" rel="noopener">Reach out to us</a>
+          
         </div>
       </div>
       <figure class="kv" data-load style="--d:.2s">
@@ -1523,7 +1523,7 @@ h3{font-size:18px!important}.text-xs{font-size:13px!important}.text-sm{font-size
           <li><i><svg aria-hidden="true"><use href="#i-check"/></svg></i>Start from data you already own. No new surveys.</li>
         </ul>
         <div class="map-ctas">
-          <a class="btn btn-navy" href="https://docs.google.com/forms/d/e/1FAIpQLSe8JEOA2EhMzdzyRiSSx30fUWKxOo9dDRcXpkWkTJAptKvqMA/viewform?usp=sharing&amp;ouid=112665294642381495824" target="_blank" rel="noopener">Sign up on our demo form to learn more.<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-navy" href="#prediktaContact" data-contact-link>Let’s talk<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
       <div id="mapDemo" data-reveal data-bars style="--d:.15s">
@@ -1692,20 +1692,32 @@ h3{font-size:18px!important}.text-xs{font-size:13px!important}.text-sm{font-size
         <p>Bring one live brief with two or three ideas. We’ll run it past the Filipino market with you.</p>
         <div class="hero-ctas">
           <a class="btn btn-white" href="https://app.predikta.ai/login" target="_blank" rel="noopener" data-trial>Try it Now for Free<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSe8JEOA2EhMzdzyRiSSx30fUWKxOo9dDRcXpkWkTJAptKvqMA/viewform?usp=sharing&amp;ouid=112665294642381495824" target="_blank" rel="noopener">Reach out to us</a>
+          
         </div>
       </div>
-      <div class="next-destination"><div class="cta-dna" aria-hidden="true"><svg viewBox="0 0 600 180" fill="none"><g class="cta-dna-lines"></g></svg></div><a class="upnext" id="upnext" href="#how-it-works">
-        <span>Up next</span>
-        <b id="upnextTitle">How it works</b>
-        <small id="upnextDesc">Six steps from idea to launch</small>
-        <i><svg aria-hidden="true"><use href="#i-arrow"/></svg></i>
-      </a></div>
+      <div class="next-destination"><div class="cta-dna" aria-hidden="true"><svg viewBox="0 0 600 180" fill="none"><g class="cta-dna-lines"></g></svg></div><form class="contact-form" id="prediktaContact" action="https://formsubmit.co/joshua.lidasan@netopia.ai" method="post" data-noedit aria-labelledby="contactTitle">
+        <span class="contact-eyebrow">Let’s talk</span>
+        <h3 id="contactTitle">Your next idea starts here.</h3>
+        <div class="contact-fields">
+          <label for="contactName">Name</label>
+          <input id="contactName" name="name" autocomplete="name" placeholder="Your name" maxlength="100" required>
+          <label for="contactEmail">Email</label>
+          <input id="contactEmail" name="email" type="email" autocomplete="email" placeholder="you@company.com" maxlength="254" required>
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" name="message" rows="2" placeholder="How can we help?" maxlength="5000" required></textarea>
+        </div>
+        <button class="contact-submit" type="submit">Send message <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        <p class="contact-note" id="contactNote" role="status" aria-live="polite" hidden></p>
+        <input type="hidden" name="_subject" value="Predikta — Website inquiry">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+      </form></div>
     </div>
     <div class="foot-grid">
       <div class="foot-about">
         <a class="brand" href="#home" aria-label="Predikta home"><svg aria-hidden="true"><use href="#i-logo"/></svg><span>Predikta</span></a>
-        <p>The entire Filipino market on call. Behavioral AI by <span class="brand-nowrap">Netopia AI</span>.</p>
+        <p>The entire Filipino market on call.<br>Behavioral AI by <span class="brand-nowrap">Netopia AI</span>.</p>
         <div class="socials"><a href="https://www.linkedin.com/company/prediktaai/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/prediktaai/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/prediktaai" target="_blank" rel="noopener">Facebook</a></div>
       </div>
       <div>
@@ -1814,7 +1826,6 @@ h3{font-size:18px!important}.text-xs{font-size:13px!important}.text-sm{font-size
   }
 
   /* ---------- pages: one visible at a time, switched from the menu ---------- */
-  var upnext = $('#upnext');
   function showPage(page){
     if (current === page) return;
     pages.forEach(function(p){ p.hidden = (p !== page); });
@@ -1822,10 +1833,6 @@ h3{font-size:18px!important}.text-xs{font-size:13px!important}.text-sm{font-size
     var id = page.id;
     nav.classList.toggle('solid', id !== 'home');
     $$('[data-nav]').forEach(function(a){ a.classList.toggle('is-current', a.getAttribute('data-nav') === id); });
-    var nxt = document.getElementById(ORDER[(ORDER.indexOf(id) + 1) % ORDER.length]);
-    upnext.setAttribute('href', '#' + nxt.id);
-    $('#upnextTitle').textContent = nxt.id === 'home' ? 'Back to home' : nxt.getAttribute('data-label');
-    $('#upnextDesc').textContent = nxt.getAttribute('data-desc') || 'Start from the top';
     setMenu(false);
     armPage(page);
     document.dispatchEvent(new CustomEvent('pagechange', {detail:{id:id}}));
@@ -1850,7 +1857,7 @@ h3{font-size:18px!important}.text-xs{font-size:13px!important}.text-sm{font-size
   }
   document.addEventListener('click', function(e){
     var a = e.target.closest && e.target.closest('a[href^="#"]');
-    if (!a) return;
+    if (!a || a.hasAttribute('data-contact-link')) return;
     var id = a.getAttribute('href').slice(1);
     e.preventDefault();
     if (!id) return; // placeholder link
@@ -2802,5 +2809,92 @@ a.link[href^="https://app.predikta.ai"],a.link[href^="https://docs.google.com/fo
   function sync(){if(raf)cancelAnimationFrame(raf);raf=0;previous=0;draw();if(visible&&!document.hidden&&!reduced.matches)raf=requestAnimationFrame(frame);}
   if('IntersectionObserver' in window)new IntersectionObserver(function(es){visible=es[0].isIntersecting;sync();}).observe(group.closest('.next-destination'));else visible=true;
   document.addEventListener('visibilitychange',sync);reduced.addEventListener('change',sync);sync();
+})();
+</script>
+
+<style id="predikta-contact-style">
+.endcap{padding:24px var(--gutter);background:#141414}
+.endcap>.wrap{max-width:var(--wrap);padding:28px 32px 0;border:0;border-radius:0;background:transparent}
+.endcap .launch{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:center;gap:40px;padding:0 0 26px}
+.endcap .launch h2{font-size:clamp(32px,3.6vw,48px);max-width:18ch}
+.endcap .launch p{font-size:16px;line-height:1.5;margin-top:14px;max-width:460px}
+.endcap .launch .hero-ctas{margin-top:20px;gap:12px}
+.endcap .hero-ctas .btn{padding:13px 20px;font-size:14px;min-height:44px}
+.endcap .closing-brand{margin-bottom:16px}
+.endcap .next-destination{padding-top:0}
+.endcap .cta-dna{display:none}
+.contact-form{position:relative;padding:0;background:transparent;border:0;border-radius:0;font-family:var(--f-body);color:#fff;scroll-margin-top:100px}
+.contact-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B7ACDF}
+.contact-form h3{margin:6px 0 14px;font:500 23px/1.2 var(--f-display);letter-spacing:-.02em}
+.contact-fields{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px}
+.contact-fields label{font-size:11px;font-weight:600;color:#d1ccd9}
+.contact-fields label[for="contactName"]{grid-column:1;grid-row:1}
+.contact-fields label[for="contactEmail"]{grid-column:2;grid-row:1}
+#contactName{grid-column:1;grid-row:2}
+#contactEmail{grid-column:2;grid-row:2}
+.contact-fields label[for="contactMessage"]{grid-column:1/-1;margin-top:5px}
+.contact-fields input,.contact-fields textarea{box-sizing:border-box;width:100%;min-width:0;padding:10px 12px;border:1px solid #343434;border-radius:9px;background:#191919;color:#fff;font:400 14px/1.4 var(--f-body);color-scheme:dark}
+.contact-fields input::placeholder,.contact-fields textarea::placeholder{color:#999}
+.contact-fields textarea{grid-column:1/-1;resize:vertical;min-height:68px}
+.contact-fields :is(input,textarea):focus-visible,.contact-submit:focus-visible,.contact-address:focus-visible{outline:2px solid #A6E6C9;outline-offset:3px}
+.contact-submit{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:12px 20px;margin-top:12px;background:#ff4a39;color:#fff;border:0;border-radius:100px;font:700 14px/1.2 var(--f-body);cursor:pointer;transition:background .2s}
+.contact-submit:hover{background:#e83c2c}
+.contact-submit svg{width:18px;height:18px}
+.endcap .launch .contact-note{margin:10px 8px 0 0;font-size:11px;line-height:1.5;color:#aaa}
+.contact-note[hidden]{display:none}.contact-submit:disabled{opacity:.65;cursor:wait}.contact-note[data-error="true"]{color:#ffaba3}
+.endcap .foot-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;padding-top:20px}
+.endcap .foot-about .brand{font-size:21px}
+.endcap .foot-about .brand svg{width:30px;height:24px}
+.endcap .foot-about p{font-size:13px;line-height:1.5;margin-top:10px;max-width:360px}
+.endcap .socials{margin-top:12px;gap:8px}
+.endcap .socials a{font-size:12px;padding:6px 12px}
+.endcap .foot-grid>div:last-child{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;align-content:start}
+.endcap h4{grid-column:1/-1;margin:0 0 4px;font-size:10px}
+.endcap address{font-size:12px;line-height:1.5}
+.endcap address+address{margin-top:0}
+.endcap .foot-bar{margin-top:20px;padding:12px 0;font-size:11px;gap:8px}
+@media(max-width:760px){.endcap>.wrap{padding:24px 20px 0}.endcap .launch{grid-template-columns:1fr;gap:24px}.endcap .launch h2{font-size:36px}.endcap .foot-grid{grid-template-columns:1fr;gap:20px}}
+@media(max-width:420px){.endcap{padding:16px 12px}.endcap>.wrap{padding:20px 16px 0;border-radius:0}.contact-form{padding:0}.contact-form h3{font-size:21px}.contact-fields{grid-template-columns:1fr}.contact-fields label[for="contactEmail"]{grid-column:1;grid-row:3;margin-top:5px}#contactEmail{grid-column:1;grid-row:4}.endcap .hero-ctas .btn{padding:12px 14px;font-size:13px}.endcap .foot-grid>div:last-child{gap:8px 14px}}
+</style>
+<script>
+(function(){
+  var form=document.getElementById('prediktaContact');
+  document.querySelectorAll('[data-contact-link]').forEach(function(link){link.addEventListener('click',function(event){
+    event.preventDefault();
+    form.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'center'});
+    document.getElementById('contactName').focus({preventScroll:true});
+  });});
+  form.addEventListener('submit',async function(event){
+    event.preventDefault();
+    if(!form.reportValidity() || form.dataset.sending==='true')return;
+    var name=form.elements.name.value.trim(),email=form.elements.email.value.trim(),message=form.elements.message.value.trim();
+    if(!name||!message){
+      var field=!name?form.elements.name:form.elements.message;
+      field.setCustomValidity('Please enter '+(!name?'your name.':'a message.'));
+      field.reportValidity();
+      field.addEventListener('input',function(){field.setCustomValidity('');},{once:true});
+      return;
+    }
+    if(form.elements._honey.value)return;
+    var button=form.querySelector('[type="submit"]'),note=document.getElementById('contactNote');
+    var original=button.innerHTML,controller=new AbortController(),timeout=setTimeout(function(){controller.abort();},20000);
+    form.dataset.sending='true';button.disabled=true;button.textContent='Sending…';
+    note.hidden=true;note.removeAttribute('data-error');form.setAttribute('aria-busy','true');
+    try{
+      var response=await fetch('https://formsubmit.co/ajax/joshua.lidasan@netopia.ai',{
+        method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({name:name,email:email,message:message,_subject:'Predikta — Website inquiry',_template:'table',_captcha:'false',_honey:''}),
+        signal:controller.signal
+      });
+      var result=await response.json();
+      if(!response.ok || !(result.success===true || result.success==='true'))throw new Error('Submission rejected');
+      note.textContent='Thank you! Your inquiry has been submitted.';note.hidden=false;form.reset();
+    }catch(error){
+      note.textContent='We couldn’t confirm your submission. Please try again, or contact joshua.lidasan@netopia.ai.';
+      note.dataset.error='true';note.hidden=false;
+    }finally{
+      clearTimeout(timeout);button.disabled=false;button.innerHTML=original;delete form.dataset.sending;form.removeAttribute('aria-busy');
+    }
+  });
 })();
 </script>
