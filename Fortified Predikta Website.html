@@ -1581,6 +1581,159 @@ body:has(#plans:not([hidden])) .endcap .hero-ctas{display:none}
 @media(max-width:740px){#plans .simple-plan-card{grid-template-columns:1fr;padding:28px 24px;gap:28px}#plans .simple-plan-national{padding:28px 0 0;border-left:0;border-top:1px solid var(--line,#ddd)}#plans .simple-plan-card .btn{width:100%;justify-content:center}#plans .simple-plan-scale>div{padding:0 10px}#plans .simple-plan-scale b{font-size:30px}#plans .simple-plan-scale span{font-size:13px}}
 @media(max-width:480px){#plans .simple-plan-scale{grid-template-columns:1fr;gap:20px}#plans .simple-plan-scale>div{padding:0;text-align:left;display:grid;grid-template-columns:110px 1fr;gap:4px 12px;align-items:center}#plans .simple-plan-scale>div+div{border-left:0;border-top:1px solid var(--line,#ddd);padding-top:20px}#plans .simple-plan-scale b{grid-row:span 2;font-size:28px}#plans .simple-plan-scale span,#plans .simple-plan-scale small{margin:0}}
 </style>
+<style id="predikta-articles">
+/* ---------- ARTICLES: featured articles hub + in-site readers ---------- */
+.arts{background:#F7F7F7}
+.arts-head{max-width:820px}
+.arts-head .lead{margin-top:18px}
+.arts-list{display:grid;gap:24px;margin-top:48px}
+.arts-card{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .3s}
+.arts-card:hover{transform:translateY(-4px);box-shadow:0 22px 48px rgba(24,19,73,.10);border-color:#c9cadb}
+.arts-card .ac-art{min-height:250px}
+.arts-card.paper .ac-art,.rd-banner.paper{background:radial-gradient(120% 95% at 0% 0%,#2E7D6B 0%,var(--navy) 58%,var(--navy-2) 100%)}
+.arts-card.paper .ac-art b em,.rd-banner.paper b em{color:#8ED9B0}
+.arts-body{padding:34px 38px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.arts-body h2,.arts-body h3{font:500 clamp(24px,2.6vw,32px)/1.15 var(--f-display);letter-spacing:-.015em;color:var(--ink);margin:0;text-wrap:balance}
+.arts-body p{font-size:17px;line-height:1.6;color:var(--muted)}
+.arts-facts{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:2px 0 0;padding:0}
+.arts-facts li{font-size:14px;line-height:1.3;color:var(--ink);background:#F7F7F7;border:1px solid var(--line);border-radius:100px;padding:7px 12px}
+.arts-facts b{font:600 14px/1 var(--f-display);color:var(--coral-deep);margin-right:2px}
+.arts-card .ac-go svg{width:16px;height:16px;transition:transform .35s var(--ease)}
+.arts-card:hover .ac-go,.article-card[href^="#"]:hover .ac-go{color:var(--coral-deep)}
+.arts-card:hover .ac-go svg,.article-card[href^="#"]:hover .ac-go svg{transform:translateX(4px)}
+.arts-also{margin-top:24px;font-size:15px;color:var(--muted)}
+.arts-also a{color:var(--navy);font-weight:600;text-underline-offset:3px}
+.arts-also a:hover{color:var(--coral-deep)}
+@media(max-width:860px){.arts-card{grid-template-columns:1fr}.arts-card .ac-art{min-height:160px;flex-direction:row;align-items:flex-end;justify-content:space-between}.arts-card .ac-art span{max-width:160px}.arts-body{padding:26px 24px}}
+
+/* reader: hero */
+.rd-hero{background:#F7F7F7;padding-bottom:clamp(40px,5vw,64px)}
+.rd-head{max-width:880px}
+.rd-crumbs{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font:700 12px/1.3 var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+.rd-crumbs a{color:var(--coral-deep);text-decoration:none}
+.rd-crumbs a:hover{text-decoration:underline;text-underline-offset:3px}
+.rd-title{font:500 clamp(36px,5vw,60px)/1.06 var(--f-display);letter-spacing:-.025em;color:var(--ink);text-wrap:balance}
+.rd-dek{margin-top:22px;font-size:clamp(17px,1.5vw,19px);line-height:1.65;color:var(--muted);max-width:72ch}
+.rd-meta{display:flex;flex-wrap:wrap;gap:6px 0;margin-top:24px;font-size:15px;line-height:1.5;color:var(--muted)}
+.rd-meta>span:not(:last-child)::after{content:"·";margin:0 10px;color:#B5B5B5}
+.rd-meta>.rd-by{flex-basis:100%;margin-bottom:4px}
+.rd-meta>.rd-by::after{content:none!important}
+.rd-meta b{color:var(--ink);font-weight:600}
+.rd-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.rd-btn{display:inline-flex;align-items:center;gap:8px;font:700 14px/1 var(--f-body);padding:12px 16px;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--navy);text-decoration:none;cursor:pointer;transition:border-color .25s,color .25s,background-color .25s}
+.rd-btn:hover{border-color:var(--navy)}
+.rd-btn svg{width:16px;height:16px;flex-shrink:0}
+.rd-btn.solid{background:#1F7A55;border-color:#1F7A55;color:#fff}
+.rd-btn.solid:hover{background:#176344;border-color:#176344}
+.rd-btn.is-done{border-color:#1F7A55;color:#1F7A55}
+.rd-btn.sm{padding:8px 12px;font-size:13px}
+.rd-banner{margin-top:clamp(32px,4vw,44px);min-height:clamp(200px,24vw,300px);border-radius:16px;padding:clamp(24px,3vw,40px);justify-content:flex-end}
+.rd-banner span{font-size:12px}
+.rd-banner b{font-size:clamp(72px,10vw,128px)}
+.rd-banner small{position:relative;font-size:15px;line-height:1.45;color:var(--on-dark-2);max-width:46ch}
+
+/* reader: layout */
+.rd-main{background:#fff;padding-block:clamp(48px,6vw,88px)}
+.rd-layout{display:grid;grid-template-columns:190px minmax(0,720px);gap:clamp(40px,6vw,88px);justify-content:center}
+.rd-toc{position:sticky;top:112px;align-self:start}
+.rd-toc>p{font:700 11px/1.3 var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.rd-toc ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}
+.rd-toc a{display:block;padding:7px 0 7px 16px;margin-left:-1px;border-left:2px solid transparent;font-size:14px;line-height:1.35;color:var(--muted);text-decoration:none;transition:color .2s,border-color .2s}
+.rd-toc a:hover{color:var(--ink)}
+.rd-toc a.is-on{color:var(--ink);border-left-color:var(--coral);font-weight:600}
+@media(max-width:1000px){.rd-layout{grid-template-columns:minmax(0,1fr)}.rd-toc{display:none}}
+
+/* reader: body type */
+.rd-body{font-size:18px;line-height:1.75;color:#2A2A2A;min-width:0}
+.rd-body>section{scroll-margin-top:100px}
+.rd-body>section+section,.rd-body>section+.rd-closing,.rd-closing+section{margin-top:clamp(52px,6vw,76px)}
+.rd-body p{margin:0 0 1.15em}
+.rd-body p:last-child{margin-bottom:0}
+.rd-label{font:700 12px/1.3 var(--f-body)!important;letter-spacing:.16em;text-transform:uppercase;color:var(--coral-deep);margin:0 0 12px!important}
+.rd-body h2{font:500 clamp(28px,3vw,38px)/1.15 var(--f-display);letter-spacing:-.015em;color:var(--ink);margin:0 0 12px;text-wrap:balance}
+.rd-deck{font:400 clamp(19px,1.8vw,22px)/1.45 var(--f-display)!important;color:var(--muted);margin:0 0 24px!important}
+.rd-body strong{color:var(--ink);font-weight:700}
+.rd-body a{color:var(--navy);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.rd-body a:hover{color:var(--coral-deep)}
+.rd-body blockquote{margin:34px 0;padding:2px 0 2px 26px;border-left:3px solid var(--coral)}
+.rd-body blockquote p{font:400 clamp(21px,2vw,25px)/1.45 var(--f-display);color:var(--ink);margin:0}
+.rd-body blockquote cite{display:block;margin-top:12px;font:600 14px/1.4 var(--f-body);font-style:normal;color:var(--muted)}
+
+/* reader: components */
+.rd-layers{display:grid;gap:16px;margin:28px 0 30px}
+.rd-layer{display:grid;grid-template-columns:52px minmax(0,1fr);gap:20px;padding:26px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.rd-layer.l2{border-color:#F2B8B0;box-shadow:inset 3px 0 0 var(--coral)}
+.rd-badge{width:52px;height:52px;border-radius:12px;background:var(--navy);color:#fff;font:600 18px/52px var(--f-display);text-align:center}
+.rd-layer.l2 .rd-badge{background:var(--coral)}
+.rd-layer h3{font:600 19px/1.3 var(--f-display);color:var(--ink);margin:0 0 10px}
+.rd-layer p{font-size:16px;line-height:1.65;margin:0 0 12px}
+.rd-q{font-weight:600;color:var(--navy);font-size:15px!important;margin:0!important}
+.rd-methods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:26px 0 30px}
+.rd-method{padding:22px;border:1px solid var(--line);border-radius:12px;background:#F7F7F7}
+.rd-method>span{font:700 11px/1.3 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--coral-deep)}
+.rd-method h3{font:600 18px/1.25 var(--f-display);color:var(--ink);margin:8px 0}
+.rd-method p{font-size:15px;line-height:1.6;margin:0}
+.rd-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#141414;border:1px solid #343434;border-radius:14px;padding:26px 8px;margin:32px 0}
+.rd-stat{padding:6px 20px;min-width:0}
+.rd-stat+.rd-stat{border-left:1px solid #383838}
+.rd-stat b{display:block;font:500 clamp(28px,2.6vw,36px)/1 var(--f-display);color:#fff;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.rd-stat i{display:block;width:26px;height:3px;background:var(--coral);margin:16px 0 12px}
+.rd-stat span{display:block;font-size:14px;line-height:1.45;color:#C8C8C8}
+.rd-callout{margin:30px 0;padding:24px 28px;background:#F7F7F7;border-radius:12px;box-shadow:inset 3px 0 0 var(--coral)}
+.rd-callout p{margin:0;font-size:17px;line-height:1.65}
+.rd-comps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:26px 0 0}
+.rd-comp{padding:22px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.rd-comp h3{font:600 19px/1.3 var(--f-display);color:var(--ink);margin:0}
+.rd-body .rd-tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 12px}
+.rd-tags span{font-size:12px;line-height:1.3;font-weight:600;color:var(--muted);background:#F2F2F2;border-radius:100px;padding:5px 10px}
+.rd-comp p{font-size:15px;line-height:1.6}
+.rd-table{margin:26px 0;border:1px solid var(--line);border-radius:12px;overflow-x:auto;background:#fff}
+.rd-table:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
+.rd-table table{width:100%;min-width:640px;border-collapse:collapse;font-size:14px;line-height:1.45}
+.rd-table th{background:#181349;color:#fff;font:700 11px/1.3 var(--f-body);letter-spacing:.12em;text-transform:uppercase;text-align:left;padding:14px 14px;vertical-align:bottom}
+.rd-table td{padding:14px 14px;border-top:1px solid var(--line);color:var(--muted);vertical-align:top}
+.rd-table td:first-child{font:600 15px/1.35 var(--f-display);color:var(--ink);white-space:nowrap}
+.rd-table tr.pk td{background:#F7F7F7;color:var(--ink);font-weight:600}
+.rd-table tr.pk td:first-child{box-shadow:inset 3px 0 0 var(--coral)}
+.rd-table.num table{min-width:0}
+.rd-table.num th+th,.rd-table.num td+td{text-align:right;font-variant-numeric:tabular-nums}
+.rd-table.num td:last-child{color:var(--ink);font-weight:600}
+.rd-note{font-size:13px!important;line-height:1.5!important;color:var(--muted);margin-top:-12px!important}
+.rd-abstract{padding:26px 28px;background:#F7F7F7;border-radius:12px}
+.rd-abstract p{font-size:16px;line-height:1.7;margin:0}
+.rd-closing{padding:clamp(28px,4vw,44px);background:#141414;border-radius:16px}
+.rd-closing .rd-label{color:#FF7A6D}
+.rd-closing h3{font:500 clamp(22px,2.4vw,30px)/1.3 var(--f-display);color:#fff;margin:0 0 14px;text-wrap:balance}
+.rd-closing p{color:#C8C8C8;font-size:17px;line-height:1.65}
+.rd-sources{padding-top:28px;border-top:1px solid var(--line)}
+.rd-body .rd-sources h2{font:600 20px/1.3 var(--f-display);margin-bottom:14px}
+.rd-sources ol{margin:0;padding-left:20px;font-size:14px;line-height:1.6;color:var(--muted)}
+.rd-sources li+li{margin-top:6px}
+.rd-sources>p{font-size:16px}
+.rd-origin{margin-top:22px!important;font-size:14px!important;color:var(--muted)}
+.rd-affil{font-size:14px!important;line-height:1.6!important;color:var(--muted)}
+.rd-cite{margin-top:18px;border-radius:12px;overflow:hidden;border:1px solid #2C2C2C}
+.rd-cite-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px 10px 18px;background:#202020;color:#C8C8C8;font:700 11px/1.3 var(--f-body);letter-spacing:.14em;text-transform:uppercase}
+.rd-cite pre{margin:0;padding:18px;background:#141414;color:#E9E9E9;overflow-x:auto;font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre}
+
+/* reader: next read */
+.rd-next{background:#F7F7F7;padding-block:clamp(48px,6vw,80px)}
+.rd-next-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:22px}
+.rd-next-head h2{font:500 clamp(24px,2.6vw,32px)/1.2 var(--f-display);letter-spacing:-.01em;color:var(--ink)}
+@media(max-width:760px){
+  .rd-body{font-size:17px}
+  .rd-methods,.rd-comps{grid-template-columns:1fr}
+  .rd-layer{grid-template-columns:1fr;gap:14px;padding:22px}
+  .rd-badge{width:44px;height:44px;line-height:44px;font-size:16px}
+  .rd-stats{grid-template-columns:repeat(2,minmax(0,1fr));padding:14px 4px}
+  .rd-stat{padding:10px 14px}
+  .rd-stat:nth-child(3){border-left:0}
+  .rd-stat:nth-child(n+3){border-top:1px solid #383838;margin-top:8px;padding-top:18px}
+  .rd-callout{padding:20px 20px 20px 22px}
+  .rd-abstract{padding:20px}
+  .rd-banner small{font-size:14px}
+}
+</style>
 </head><body>
 
 <script>document.documentElement.classList.add('js');</script>
@@ -1593,7 +1746,7 @@ body:has(#plans:not([hidden])) .endcap .hero-ctas{display:none}
   <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
   <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20 7 4"/></symbol>
-  <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></symbol><symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></symbol>
   <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
@@ -1624,6 +1777,7 @@ body:has(#plans:not([hidden])) .endcap .hero-ctas{display:none}
       </li>
       <li><a class="nav-a" href="#mapme" data-nav="mapme">MAP ME<span class="new">NEW</span></a></li>
       <li><a class="nav-a" href="#plans" data-nav="plans">Plans</a></li>
+      <li><a class="nav-a" href="#articles" data-nav="articles">Articles</a></li>
       <li class="has-menu">
         <a class="nav-a" href="#about" data-nav="about" aria-haspopup="true">About<svg aria-hidden="true"><use href="#i-chev"/></svg></a>
         <div class="menu">
@@ -1648,6 +1802,7 @@ body:has(#plans:not([hidden])) .endcap .hero-ctas{display:none}
   <a href="#solutions" data-nav="solutions">Solutions<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
   <a href="#mapme" data-nav="mapme">MAP ME<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
   <a href="#plans" data-nav="plans">Plans<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  <a href="#articles" data-nav="articles">Articles<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
   <a href="#about" data-nav="about">About<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
   <a class="btn btn-white" href="https://app.predikta.ai/login" target="_blank" rel="noopener" data-trial>Try for free</a>
 </div>
@@ -1695,7 +1850,7 @@ body:has(#plans:not([hidden])) .endcap .hero-ctas{display:none}
             </div>
           </div>
         </div>
-        <div class="hs-note">*Netopia AI sentiment-simulation study, <a class="arx" href="https://arxiv.org/abs/2505.22125" target="_blank" rel="noopener">arXiv 2505.22125</a>. **Top 20% of ads by Predikta score vs. the bottom 80%, in a blind backtest of ~20,000 ad pairs with <a class="arx" href="https://medium.com/@info_69215/proof-not-promises-a-new-bar-for-behavioral-ai-4d941202f9b4?sharedUserId=info_69215" target="_blank" rel="noopener">AdSpark (April 2026)</a>.</div>
+        <div class="hs-note">*Netopia AI sentiment-simulation study, <a class="arx" href="https://arxiv.org/abs/2505.22125" target="_blank" rel="noopener">arXiv 2505.22125</a>. **Top 20% of ads by Predikta score vs. the bottom 80%, in a blind backtest of 20,000 ad pairs with <a class="arx" href="#proof-not-promises">AdSpark (April 2026)</a>.</div>
       </div>
     </div>
   </header>
@@ -1843,7 +1998,7 @@ body:has(#plans:not([hidden])) .endcap .hero-ctas{display:none}
           <div class="eyebrow">Built for the Philippines</div>
           <h2 class="h2">Understand what<br><em>moves Filipinos.</em></h2>
           <p class="lead">Test your ad, offer or idea on survey-based modeled audiences.</p>
-          
+
         </div>
         <div class="population-art" data-reveal>
           <figure class="population-field" id="populationField">
@@ -1875,7 +2030,7 @@ body:has(#plans:not([hidden])) .endcap .hero-ctas{display:none}
       <div class="center" data-reveal style="max-width:900px;text-align:center">
         <div class="eyebrow">Proof, not hype</div>
         <h1 class="h2">Ads Predikta ranked in its top 20% earned <em>3.4× the click-through rate</em></h1>
-        <p class="lead center">In a blind backtest with AdSpark, Predikta scored real ads without seeing their results. The ads it ranked highest got more clicks, and cheaper clicks.</p>
+        <p class="lead center">In a blind backtest of 20,000 ad pairs with AdSpark, Predikta scored real ads without seeing their results. The ads it ranked highest got more clicks, and cheaper clicks.</p>
       </div>
       <div class="stat4" data-stagger>
         <div class="scard" data-reveal><b data-count>3.4×</b><i class="rule"></i><span>Higher click-through rate*</span></div>
@@ -1883,26 +2038,26 @@ body:has(#plans:not([hidden])) .endcap .hero-ctas{display:none}
         <div class="scard" data-reveal><b data-count>88%</b><i class="rule"></i><span>Peak sentiment alignment in framing tests**</span></div>
         <div class="scard" data-reveal><b data-count>92%</b><i class="rule"></i><span>Survey-response alignment**</span></div>
       </div>
-      <p class="fine" style="text-align:center">*Blind backtest of 200 real ads with AdSpark, April 2026 (800M+ impressions), top 20% vs. bottom 80%. **Netopia AI sentiment-simulation study, <a class="arx" href="https://arxiv.org/abs/2505.22125" target="_blank" rel="noopener">arXiv 2505.22125</a>.</p>
+      <p class="fine" style="text-align:center">*Blind backtest of 20,000 ad pairs with AdSpark, April 2026 (800M+ impressions), top 20% vs. bottom 80%. **Netopia AI sentiment-simulation study, <a class="arx" href="https://arxiv.org/abs/2505.22125" target="_blank" rel="noopener">arXiv 2505.22125</a>.</p>
       <div class="reads">
-      <a class="article-card" href="https://medium.com/@info_69215/proof-not-promises-a-new-bar-for-behavioral-ai-4d941202f9b4?sharedUserId=info_69215" target="_blank" rel="noopener" data-reveal>
+      <a class="article-card" href="#proof-not-promises" data-reveal>
         <div class="ac-art" aria-hidden="true"><span>Blind backtest with AdSpark</span><b>3.4<em>×</em></b></div>
         <div class="ac-body">
           <span class="ac-tag">Article · Research and development</span>
           <h3>Proof, Not Promises: A New Bar for Behavioral AI</h3>
           <p>How a blind backtest with AdSpark put Predikta’s scores against real campaign results, and what it means for your next brief.</p>
           <span class="ac-meta">Sophia Lanuzo, Melrose Tia and Jason Albia · June 2026</span>
-          <span class="ac-go">Read on Medium<svg aria-hidden="true"><use href="#i-ext"/></svg></span>
+          <span class="ac-go">Read the article<svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
         </div>
       </a>
-      <a class="article-card paper" href="https://arxiv.org/abs/2505.22125" target="_blank" rel="noopener" data-reveal>
+      <a class="article-card paper" href="#sentiment-simulation" data-reveal>
         <div class="ac-art" aria-hidden="true"><span>Sentiment simulation study</span><b>92<em>%</em></b></div>
         <div class="ac-body">
           <span class="ac-tag">Research paper · arXiv preprint</span>
           <h3>Sentiment Simulation using Generative AI Agents</h3>
           <p>The study reports 92% survey-response alignment (QWA) and sentiment alignment of up to 88% in framing tests.</p>
           <span class="ac-meta">Melrose Tia, Jason Albia and co-authors · May 2025</span>
-          <span class="ac-go">Read on arXiv<svg aria-hidden="true"><use href="#i-ext"/></svg></span>
+          <span class="ac-go">Read the summary<svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
         </div>
       </a>
       </div>
@@ -2302,7 +2457,7 @@ body:has(#plans:not([hidden])) .endcap .hero-ctas{display:none}
         <div class="qa-item open"><button class="qa-q" aria-expanded="true"><span>What is Predikta?</span><i class="pm" aria-hidden="true"></i></button><div class="qa-a"><div><p>Predikta is Netopia AI’s behavioral simulation platform, built on how 69.8 million Filipinos think, feel and decide. It shows how modeled Filipino audiences are likely to respond to an ad, offer or idea before launch, and why.</p></div></div></div>
         <div class="qa-item"><button class="qa-q" aria-expanded="false"><span>How does it work?</span><i class="pm" aria-hidden="true"></i></button><div class="qa-a"><div><p>Pick an audience, add your campaign context, and test your customer-facing copy or concept. Behavioral AI agents, each carrying a survey-based profile, respond in character. You get campaign scores by segment, from appeal to purchase intent, each with a written reason. It works like a dynamic survey: change the ad, offer or audience, and ask again.</p></div></div></div>
         <div class="qa-item"><button class="qa-q" aria-expanded="false"><span>Where does Predikta draw its insights from?</span><i class="pm" aria-hidden="true"></i></button><div class="qa-a"><div><p>From Netopia AI’s own nationwide, in-person survey, fielded in Q4 2024 and modeled into 69.8M psychographic profiles covering all 18 regions. The published study describes 2,485 respondents sampled across 17 administrative regions and a 150-item instrument. Its ±1.97% sampling margin of error does not describe simulation accuracy. The data covers personality, values, beliefs, emotions, and attitudes.</p></div></div></div>
-        <div class="qa-item"><button class="qa-q" aria-expanded="false"><span>How accurate is it?</span><i class="pm" aria-hidden="true"></i></button><div class="qa-a"><div><p>In the cited preprint, agents achieved 92% survey-response alignment (Quadratic Weighted Accuracy, or QWA). Sentiment alignment reached up to 88% in framing tests (<a class="arx" href="https://arxiv.org/abs/2505.22125" target="_blank" rel="noopener">arXiv 2505.22125</a>). In a blind backtest of 200 real ads with AdSpark, the ads Predikta ranked in its top 20% earned a 3.4× higher click-through rate and a cost per click 1/2.6 as high as that of the bottom 80%. Predikta shows what is most likely to perform; it doesn’t guarantee results.</p></div></div></div>
+        <div class="qa-item"><button class="qa-q" aria-expanded="false"><span>How accurate is it?</span><i class="pm" aria-hidden="true"></i></button><div class="qa-a"><div><p>In the cited preprint, agents achieved 92% survey-response alignment (Quadratic Weighted Accuracy, or QWA). Sentiment alignment reached up to 88% in framing tests (<a class="arx" href="https://arxiv.org/abs/2505.22125" target="_blank" rel="noopener">arXiv 2505.22125</a>). In a blind backtest of 20,000 ad pairs with AdSpark, the ads Predikta ranked in its top 20% earned a 3.4× higher click-through rate and a cost per click 1/2.6 as high as that of the bottom 80%. Predikta shows what is most likely to perform; it doesn’t guarantee results.</p></div></div></div>
         <div class="qa-item"><button class="qa-q" aria-expanded="false"><span>Can’t we just ask an LLM?</span><i class="pm" aria-hidden="true"></i></button><div class="qa-a"><div><p>A general chatbot isn’t configured to represent your chosen audience. Predikta simulates a defined Filipino audience using survey-based profiles, then reports scores and reasons by segment. Its approach has been evaluated in the cited study and commercial backtest.</p></div></div></div>
         <div class="qa-item"><button class="qa-q" aria-expanded="false"><span>What are the main use cases?</span><i class="pm" aria-hidden="true"></i></button><div class="qa-a"><div><p>Building and profiling audiences (including your own customers through MAP ME), asking a modeled segment usage and attitude questions, testing campaigns before launch, and reading live comments after launch with Listen.</p></div></div></div>
         <div class="qa-item"><button class="qa-q" aria-expanded="false"><span>Does Predikta replace research?</span><i class="pm" aria-hidden="true"></i></button><div class="qa-a"><div><p>No. Test ideas in minutes, then use fieldwork or live A/B tests to validate the strongest options.</p></div></div></div>
@@ -2337,6 +2492,450 @@ body:has(#plans:not([hidden])) .endcap .hero-ctas{display:none}
       </div>
     </div>
   </section>
+</div>
+
+<!-- =====================================================================
+     PAGE: ARTICLES (featured articles, readable on the site)
+     ===================================================================== -->
+<div class="page" id="articles" data-label="Articles" data-desc="Research and articles from the Predikta team" hidden>
+  <section class="sec top arts">
+    <div class="wrap">
+      <div class="arts-head" data-reveal>
+        <div class="eyebrow">Articles</div>
+        <h1 class="h2">The research behind <em>the numbers.</em></h1>
+        <p class="lead">How Predikta was built and tested, written by the team that did the work. Read both pieces here, in full, without leaving the site.</p>
+      </div>
+      <div class="arts-list" data-stagger>
+        <a class="arts-card" href="#proof-not-promises" data-reveal>
+          <div class="ac-art" aria-hidden="true"><span>Blind backtest with AdSpark</span><b>3.4<em>×</em></b></div>
+          <div class="arts-body">
+            <span class="ac-tag">Article · Research and development</span>
+            <h2>Proof, Not Promises: A New Bar for Behavioral AI</h2>
+            <p>How a blind backtest with AdSpark put Predikta’s scores against real campaign results, and what it means for your next brief.</p>
+            <ul class="arts-facts">
+              <li><b>20,000</b> ad pairs</li>
+              <li><b>3.4×</b> higher click-through rate</li>
+              <li><b>2.6×</b> lower cost per click</li>
+            </ul>
+            <span class="ac-meta">Sophia Lanuzo, Melrose Tia and Jason Albia · June 2026 · 10 min read</span>
+            <span class="ac-go">Read the article<svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </div>
+        </a>
+        <a class="arts-card paper" href="#sentiment-simulation" data-reveal>
+          <div class="ac-art" aria-hidden="true"><span>Sentiment simulation study</span><b>92<em>%</em></b></div>
+          <div class="arts-body">
+            <span class="ac-tag">Research paper · arXiv preprint</span>
+            <h2>Sentiment Simulation using Generative AI Agents</h2>
+            <p>The study behind Predikta’s agents: can AI agents built from real Filipino survey data answer, and feel, the way the people behind them do?</p>
+            <ul class="arts-facts">
+              <li><b>92%</b> survey-response alignment</li>
+              <li><b>81–86%</b> sentiment accuracy</li>
+              <li><b>5</b> national issues tested</li>
+            </ul>
+            <span class="ac-meta">Melrose Tia, Jason Albia and co-authors · May 2025 · 4 min read</span>
+            <span class="ac-go">Read the summary<svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </div>
+        </a>
+      </div>
+      <p class="arts-also">Also published on <a href="https://medium.com/@info_69215/proof-not-promises-a-new-bar-for-behavioral-ai-4d941202f9b4" target="_blank" rel="noopener">Medium</a> and <a href="https://arxiv.org/abs/2505.22125" target="_blank" rel="noopener">arXiv</a>.</p>
+    </div>
+  </section>
+</div>
+
+<!-- =====================================================================
+     PAGE: ARTICLE · Proof, Not Promises (in-site reader)
+     ===================================================================== -->
+<div class="page" id="proof-not-promises" data-label="Proof, Not Promises" data-desc="Article: the blind backtest with AdSpark" hidden>
+  <article class="rd" aria-labelledby="pnp-title">
+    <header class="sec top rd-hero">
+      <div class="wrap">
+        <div class="rd-head">
+          <nav class="rd-crumbs" aria-label="Breadcrumb"><a href="#articles">Articles</a><span aria-hidden="true">/</span><span>Research and development</span></nav>
+          <h1 class="rd-title" id="pnp-title">Proof, Not Promises: A New Bar for Behavioral AI</h1>
+          <p class="rd-dek">This article surveys the competitive landscape in AI-driven behavioral simulation. The central finding: the industry is converging on internal accuracy claims while avoiding the harder question of commercial validity. Predikta’s landmark backtesting study with AdSpark — the first of its kind — directly addresses that gap, and reframes what rigorous validation should look like for every platform in this category.</p>
+          <p class="rd-meta"><span class="rd-by">By <b>Sophia Lanuzo, Melrose Tia and Jason Albia</b></span><span>June 2026</span><span>10 min read</span></p>
+          <div class="rd-actions">
+            <button class="rd-btn" type="button" data-copy="#proof-not-promises"><svg aria-hidden="true"><use href="#i-link"/></svg><span>Copy link</span></button>
+            <a class="rd-btn" href="https://medium.com/@info_69215/proof-not-promises-a-new-bar-for-behavioral-ai-4d941202f9b4" target="_blank" rel="noopener"><span>Also on Medium</span><svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+          </div>
+        </div>
+        <div class="rd-banner ac-art" aria-hidden="true">
+          <span>Blind backtest with AdSpark · 20,000 ad pairs</span>
+          <b>3.4<em>×</em></b>
+          <small>Higher click-through rate for the top 20% of ads by Predikta score</small>
+        </div>
+      </div>
+    </header>
+
+    <div class="rd-main">
+      <div class="wrap rd-layout">
+        <aside class="rd-toc" aria-label="In this article">
+          <p>In this article</p>
+          <ol>
+            <li><a href="#pnp-validation">The validation problem</a></li>
+            <li><a href="#pnp-evidence">Two layers of evidence</a></li>
+            <li><a href="#pnp-backtest">The backtesting study</a></li>
+            <li><a href="#pnp-research">Research frontier</a></li>
+            <li><a href="#pnp-landscape">Product landscape</a></li>
+            <li><a href="#pnp-matrix">Validation matrix</a></li>
+            <li><a href="#pnp-sources">Sources</a></li>
+          </ol>
+        </aside>
+
+        <div class="rd-body">
+          <section id="pnp-validation" aria-labelledby="pnp-h1">
+            <p class="rd-label">01 · The Validation Problem</p>
+            <h2 id="pnp-h1">What the Industry Is Not Measuring</h2>
+            <p class="rd-deck">Two questions. Most platforms only answer one.</p>
+            <p>The synthetic audience and behavioral simulation market has moved from research curiosity to contested commercial territory in under two years. From well-funded U.S. startups like Aaru to specialized European platforms like Lakmoos, vendors increasingly position validation and predictive accuracy as primary differentiation. In practice, these claims rest on a single question: <strong>how closely does the simulated response match a known human response on a held-out dataset?</strong></p>
+            <p>That is a meaningful metric — and an important first step. It also happens to be the easier question. It demonstrates that simulation can reproduce patterns observed in existing human data.</p>
+            <blockquote><p>“Replication alone is not enough. The real test is whether behavioral signals translate into real-world outcomes.”</p></blockquote>
+            <p>Does a higher simulation sentiment score translate to a better-performing ad in the real world — against real audiences, on real platforms? To our knowledge, Predikta is the first behavioral AI simulation platform to move beyond response replication, having conducted a blind backtest against independently sourced historical campaign data from a third-party agency, measuring whether higher simulation scores correlate with actual Click-Through Rates (CTR) and Cost Per Click (CPC) outcomes.</p>
+            <p>A simulation score that predicts human responses but cannot predict which ad drives more clicks is an interesting research result. Whether it can support real marketing decisions is a different question. The Predikta × AdSpark backtesting study was designed to close that gap — and its findings carry implications not only for Predikta, but for the standard of evidence the industry should now be required to meet.</p>
+          </section>
+
+          <section id="pnp-evidence" aria-labelledby="pnp-h2">
+            <p class="rd-label">02 · Predikta’s Evidence Architecture</p>
+            <h2 id="pnp-h2">Two Layers, Two Different Questions</h2>
+            <p class="rd-deck">Most platforms have one layer of evidence. Predikta built two.</p>
+            <p>Most platforms in this behavioral simulation space rely on internal benchmarking against their own data. Predikta has deliberately built two distinct and complementary validation layers, each answering a question the other cannot.</p>
+            <div class="rd-layers">
+              <div class="rd-layer">
+                <div class="rd-badge" aria-hidden="true">L1</div>
+                <div>
+                  <h3>Scientific Foundation — Rigorous Internal Validation</h3>
+                  <p>Published as <a href="#sentiment-simulation"><em>Sentiment Simulation using Generative AI Agents</em></a> (Tia et al., arXiv:2505.22125, May 2025), the study grounded agents in a nationally representative survey of 2,485 Filipinos. The agents achieved <strong>92% alignment</strong> with original survey responses and <strong>81–86% accuracy</strong> in predicting ground-truth human sentiment, with high stability across repeated trials (±0.2–0.5% SD) and negligible sensitivity to framing variation (p = 0.9676, Cohen’s d = 0.02). Platform benchmarks: 88% simulation accuracy at national level and 96% behavioral fidelity in psychographic representation.</p>
+                  <p class="rd-q">→ Question answered: Does the simulation faithfully represent how real people think and feel?</p>
+                </div>
+              </div>
+              <div class="rd-layer l2">
+                <div class="rd-badge" aria-hidden="true">L2</div>
+                <div>
+                  <h3>Commercial Validation — Blind External Backtesting with AdSpark</h3>
+                  <p>Conducted in partnership with AdSpark and supported by 917Ventures and Brave Connective, the study evaluated real historical campaigns across multiple industries. Predikta scored ads in blind simulations, with results benchmarked against independently sourced KPI data across <strong>20,000 ad pairs</strong>. Predikta achieved a <strong>20-point advantage over random selection</strong> in identifying the stronger-performing ad, while ads in the top 20% of Predikta scores delivered <strong>3.4× higher CTRs</strong> and <strong>2.6× lower CPCs</strong> than lower-scoring ads. To our knowledge, this is the first study of its kind.</p>
+                  <p class="rd-q">→ Question answered: Can simulated audience responses reliably identify winning campaigns in the real market?</p>
+                </div>
+              </div>
+            </div>
+            <p>The significance of the two-layer structure is not just in the numbers — it is the <strong>logical completeness</strong>. Layer 1 establishes that the behavioral simulation model is accurate. Layer 2 establishes that behavioral accuracy has predictive value in the real market. Both questions must be answered before a marketing team can have justified confidence in using simulation scores to make pre-launch decisions. Predikta is the only platform in this competitive roundup that has answered both.</p>
+          </section>
+
+          <section id="pnp-backtest" aria-labelledby="pnp-h3">
+            <p class="rd-label">03 · The Backtesting Study</p>
+            <h2 id="pnp-h3">Design, Results, and Implications</h2>
+            <p class="rd-deck">Three design choices defined its credibility.</p>
+            <p>The study was designed specifically to avoid the methodological shortcuts that make internal validation exercises easy to dismiss.</p>
+            <div class="rd-methods">
+              <div class="rd-method">
+                <span>Design 01</span>
+                <h3>Independent Data Source</h3>
+                <p>Campaign data came directly from AdSpark’s own historical records — real campaigns run for real clients, with real performance outcomes already recorded across telecoms, IT, banking, and others. Predikta had no involvement in selecting which campaigns were included.</p>
+              </div>
+              <div class="rd-method">
+                <span>Design 02</span>
+                <h3>Blind Simulation</h3>
+                <p>Predikta’s behavioral scores were generated without access to actual campaign performance outcomes. There was no possibility of reverse-engineering results from known KPIs.</p>
+              </div>
+              <div class="rd-method">
+                <span>Design 03</span>
+                <h3>Real Commercial Metrics</h3>
+                <p>Performance was evaluated against CTR and CPC — widely used measures of advertising effectiveness — rather than proprietary engagement proxies or internal scoring systems.</p>
+              </div>
+            </div>
+            <div class="rd-stats">
+              <div class="rd-stat"><b>+20%</b><i aria-hidden="true"></i><span>Advantage over random chance</span></div>
+              <div class="rd-stat"><b>3.4×</b><i aria-hidden="true"></i><span>Higher CTR for top 20% scored ads</span></div>
+              <div class="rd-stat"><b>2.6×</b><i aria-hidden="true"></i><span>Lower CPC for top 20% scored ads</span></div>
+              <div class="rd-stat"><b>20,000</b><i aria-hidden="true"></i><span>Ad pairs evaluated across industries</span></div>
+            </div>
+            <p>Across 20,000 ad pairs, Predikta correctly identified the stronger-performing ad approximately <strong>70% of the time for conversion ads</strong>, based entirely on simulated audience responses. In a setting where random guessing yields 50% accuracy, a 20-percentage-point advantage achieved before any ad was deployed is not a marginal result. It suggests that the gap between simulation and market reality is smaller than the industry has assumed.</p>
+            <p>Ads in the top 20% of Predikta scores delivered 3.4 times the CTR of lower-scoring ads at a cost of 2.6 times less per click. At typical campaign spending levels, those differences are commercially significant before a single peso is allocated to a live campaign.</p>
+            <p>The study also identified where the advantage is strongest: <strong>Awareness and Conversion campaigns</strong> — the two objective types where creative quality has the most direct influence on outcomes. That is precisely the layer Predikta’s psychographic simulation is designed to model.</p>
+            <blockquote><p>“Testing Predikta against real-world campaign outcomes has been a long-standing priority for our team. Moving beyond replication of survey responses to evaluating Predikta’s output against observed campaign performance represents a meaningful development step.”</p><cite>— Sophia Lanuzo, Lead R&amp;D</cite></blockquote>
+            <div class="rd-callout">
+              <p>Every competitor in the synthetic audience and behavioral simulation space makes accuracy claims. None has published a blind backtesting exercise against independently sourced, real-world campaign performance data. Predikta is the only behavioral simulation platform with a published scientific foundation and an externally validated commercial proof point built on real ad metrics. <strong>That is not a marginal differentiator — it is a different category of evidence entirely.</strong></p>
+            </div>
+          </section>
+
+          <section id="pnp-research" aria-labelledby="pnp-h4">
+            <p class="rd-label">04 · Research Frontier</p>
+            <h2 id="pnp-h4">Academic Work Shaping the Science</h2>
+            <p>The backtesting study results do not stand alone. The broader academic literature on psychographically grounded agent simulation is converging on findings that reinforce precisely what the AdSpark study demonstrates in commercial terms.</p>
+            <p><strong>Our Foundational Paper (arXiv:2505.22125).</strong> Our arXiv paper established the behavioral architecture that the backtesting study later tested in a real commercial setting. The paper instantiated agents from survey data covering personality, values, beliefs, and socio-political attitudes. Critically, it showed that agents could maintain stable, psychographically anchored outputs regardless of how scenarios are framed — the behavioral property that makes real-world commercial prediction possible.</p>
+            <p><strong>LLM Agents Grounded in Self-Reports (arXiv:2411.10109).</strong> Using 1,052 Americans, this study showed that agents built from qualitative interview and structured survey data reached 82–86% agreement on held-out social attitude items, compared with 74% for demographics-only agents. This independently supports Predikta’s design choice: grounding agents in rich psychographic data is measurably more effective than demographic profiling alone.</p>
+            <p><strong>AgentSociety (arXiv:2502.08691).</strong> A large-scale social simulation framework that uses LLM-driven agents integrating Maslow’s hierarchy of needs, different emotional states, motivations, and cognitive processes. This signals where the frontier is heading: motivational agent architectures that model dynamic needs and affective states beyond static profile-based simulation.</p>
+            <p><strong>Polarization Simulation (Springer, 2025).</strong> A 100-agent study grounded in psychometric and demographic data from Serbian social media users demonstrates that psychographically grounded agents can produce coherent ideological clustering and differentiated behavior. This provides adjacent support for the stability property Predikta’s paper documents.</p>
+            <p><strong>Open challenge.</strong> A 2025 meta-review notes LLMs “struggle significantly in scenarios that more accurately reflect real-world conditions” — particularly around emotional nuance, cultural context, and group dynamics. Predikta’s Philippines-specific, survey-grounded dataset directly responds to the cultural-context critique. The AdSpark backtesting results are evidence that the response is working.</p>
+          </section>
+
+          <section id="pnp-landscape" aria-labelledby="pnp-h5">
+            <p class="rd-label">05 · Product Landscape</p>
+            <h2 id="pnp-h5">Who Is Doing What</h2>
+            <p class="rd-deck">The field is converging on the same question — but not the same answers.</p>
+            <p>The synthetic audience and behavioral simulation space is increasingly converging around a single question: not whether synthetic respondents can be generated, but how their outputs are validated. To our knowledge, no other platform has published a comparable validation architecture in the Philippines or broader Southeast Asia — one that integrates local survey grounding, population-scale modeling, and externally verified commercial outcomes.</p>
+            <div class="rd-comps">
+              <div class="rd-comp">
+                <h3>Aaru</h3>
+                <p class="rd-tags"><span>$1B valuation</span><span>Multi-agent</span><span>Accenture-backed</span></p>
+                <p>The highest-profile funded competitor. Founded March 2024, reported Series A at $1B headline valuation. Best-known validation: correctly predicted the New York Democratic primary. Validation approach is event-prediction based — not tied to ad creative performance metrics. No peer-reviewed paper, no commercial backtest against CTR or CPC published.</p>
+              </div>
+              <div class="rd-comp">
+                <h3>Atypica.AI</h3>
+                <p class="rd-tags"><span>300K+ personas</span><span>Global panels</span><span>Strategy focus</span></p>
+                <p>AI consumer research and product strategy platform. Claims 300,000+ persona library built from in-depth interviews and rapid time-to-insight. Validation rests on internal benchmarks and client testimonials. No peer-reviewed accuracy figures or published external backtest against real-world ad performance data.</p>
+              </div>
+              <div class="rd-comp">
+                <h3>Evidenza</h3>
+                <p class="rd-tags"><span>Ad creative testing</span><span>Psychographic</span><span>Synthetic audiences</span></p>
+                <p>The most direct product-use-case competitor to Predikta’s Campaign Simulation Lab. Creates audience-specific synthetic personas to validate brand messaging and ad creatives. No published peer-reviewed accuracy metrics or commercial backtesting results against live campaign performance data found.</p>
+              </div>
+              <div class="rd-comp">
+                <h3>Lakmoos</h3>
+                <p class="rd-tags"><span>Neuro-symbolic AI</span><span>98% similarity</span><span>High auditability</span></p>
+                <p>Differentiates on architecture: neuro-symbolic AI rather than pure LLMs. Reports 98%+ similarity scores across 20 client benchmark studies in 2025. Benchmark figures are client-sourced, not peer-reviewed or independently verified against real campaign performance metrics.</p>
+              </div>
+              <div class="rd-comp">
+                <h3>Synthetic Users</h3>
+                <p class="rd-tags"><span>Multi-LLM</span><span>SOC 2</span><span>UX / product</span></p>
+                <p>General-purpose synthetic research participants for interviews, concept tests, surveys, and usability studies. Multi-agent architecture coordinating multiple LLMs. Strong in UX and product research; less focused on campaign sentiment simulation or marketing performance forecasting.</p>
+              </div>
+              <div class="rd-comp">
+                <h3>Ditto / Deepsona</h3>
+                <p class="rd-tags"><span>Pricing strategy</span><span>Narrative outputs</span><span>Western markets</span></p>
+                <p>A cluster of specialized platforms focused on concept validation, pricing, messaging, and go-to-market research. Both operate primarily in Western markets with no published culturally specific models for Southeast Asia.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="pnp-matrix" aria-labelledby="pnp-h6">
+            <p class="rd-label">06 · Competitive Validation Matrix</p>
+            <h2 id="pnp-h6">A Standard the Field Must Now Meet</h2>
+            <p class="rd-deck">Five dimensions that matter when deciding whether simulation scores can be trusted for real media budget decisions.</p>
+            <div class="rd-table" role="region" aria-label="Competitive validation matrix" tabindex="0">
+              <table>
+                <thead><tr><th scope="col">Platform</th><th scope="col">Public Science</th><th scope="col">External Backtest</th><th scope="col">Real Ad Metrics</th><th scope="col">Cultural Grounding</th></tr></thead>
+                <tbody>
+                  <tr class="pk"><td>Predikta</td><td>✓ arXiv:2505.22125 · 92%</td><td>✓ AdSpark · 20,000 ad pairs · blind</td><td>✓ 3.4× CTR · 2.6× CPC · 70%</td><td>✓ PH-specific · 2,485 respondents</td></tr>
+                  <tr><td>Aaru</td><td>No peer-reviewed paper</td><td>Event prediction only</td><td>No CTR/CPC figures</td><td>US-primary / global</td></tr>
+                  <tr><td>Evidenza</td><td>No published metrics</td><td>No backtest published</td><td>No KPI validation</td><td>Global; no regional</td></tr>
+                  <tr><td>Lakmoos</td><td>Client-sourced only</td><td>Not independently verified</td><td>No CTR/CPC figures</td><td>European market</td></tr>
+                  <tr><td>Atypica.AI</td><td>Testimonials only</td><td>No external backtest</td><td>No ad performance data</td><td>Global panels</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Predikta is the only platform in this comparison with publicly documented evidence across all five dimensions. Other platforms may provide validation claims, partner integrations, or market-specific capabilities — but publicly available evidence is generally partial, unpublished, or not directly tied to campaign-level advertising outcomes.</p>
+          </section>
+
+          <div class="rd-closing">
+            <p class="rd-label">Signal Lab · Predikta</p>
+            <h3>The question was never whether simulation could replicate human data. It was whether it could predict what happens in the market.</h3>
+            <p>Predikta has answered that question — with a methodology designed to hold up to scrutiny, in a market that has largely avoided asking it. The backtesting study sets a new baseline: one that moves the conversation from internal fidelity to external predictive validity. That is the standard the industry will now need to respond to.</p>
+          </div>
+
+          <section class="rd-sources" id="pnp-sources" aria-labelledby="pnp-h7">
+            <h2 id="pnp-h7">Sources &amp; References</h2>
+            <ol>
+              <li>Tia, M., Lanuzo, J.S., et al. (2025). Sentiment Simulation using Generative AI Agents. arXiv:2505.22125 [cs.MA]. Netopia AI / UP Diliman / UP Los Baños.</li>
+              <li>Netopia AI and AdSpark (May 2026). Predikta × AdSpark Backtesting Study — Press Release. Key figures: 3.4× CTR, 2.6× CPC reduction, 70% head-to-head accuracy, 20,000 ad pairs.</li>
+              <li>Greenbook GRIT Report (2025). AI adoption in qualitative research — 72% figure, cited via Perspective AI blog, April 2026.</li>
+              <li>PyMC Labs (2026). Synthetic Consumers: A Practical Guide. pymc-labs.com.</li>
+              <li>TechCrunch (Dec 2025). AI synthetic research startup Aaru raised a Series A at a $1B headline valuation.</li>
+              <li>Accenture Newsroom (Mar 2025). Accenture Invests in and Collaborates with AI-Powered Agentic Prediction Engine Aaru.</li>
+              <li>arXiv:2411.10109 (Nov 2024). LLM Agents Grounded in Self-Reports Enable General-Purpose Simulation of Individuals.</li>
+              <li>arXiv:2502.08691 (Feb 2025). AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents.</li>
+              <li>Springer (2025). Agent-Based Simulation of Politicized Topics Using Large Language Models.</li>
+              <li>Ditto (Feb 2026). Synthetic Research Platforms: The 2026 Market Map. askditto.io.</li>
+            </ol>
+            <p class="rd-origin">First published on <a href="https://medium.com/@info_69215/proof-not-promises-a-new-bar-for-behavioral-ai-4d941202f9b4" target="_blank" rel="noopener">Medium</a>, June 2026.</p>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="rd-next" aria-labelledby="pnp-next">
+      <div class="wrap">
+        <div class="rd-next-head">
+          <h2 id="pnp-next">Keep reading</h2>
+          <a class="link" href="#articles">All articles<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <a class="arts-card paper" href="#sentiment-simulation">
+          <div class="ac-art" aria-hidden="true"><span>Sentiment simulation study</span><b>92<em>%</em></b></div>
+          <div class="arts-body">
+            <span class="ac-tag">Research paper · arXiv preprint</span>
+            <h3>Sentiment Simulation using Generative AI Agents</h3>
+            <p>The study behind Predikta’s agents: can AI agents built from real Filipino survey data answer, and feel, the way the people behind them do?</p>
+            <span class="ac-go">Read the summary<svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </article>
+</div>
+
+<!-- =====================================================================
+     PAGE: PAPER · Sentiment Simulation using Generative AI Agents (summary)
+     ===================================================================== -->
+<div class="page" id="sentiment-simulation" data-label="Sentiment simulation paper" data-desc="Research summary: arXiv 2505.22125" hidden>
+  <article class="rd" aria-labelledby="ssp-title">
+    <header class="sec top rd-hero">
+      <div class="wrap">
+        <div class="rd-head">
+          <nav class="rd-crumbs" aria-label="Breadcrumb"><a href="#articles">Articles</a><span aria-hidden="true">/</span><span>Research paper</span></nav>
+          <h1 class="rd-title" id="ssp-title">Sentiment Simulation using Generative AI Agents</h1>
+          <p class="rd-dek">Can AI agents built from real survey data answer, and feel, the way the people behind them do? Netopia AI and researchers from the University of the Philippines tested it on five national issues. This page summarizes what the study did and found, in plain language.</p>
+          <p class="rd-meta"><span class="rd-by">By <b>Melrose Tia, Jezreel Sophia Lanuzo, Lei Rigi Baltazar, Marie Joy Lopez-Relente, Diwa Malaya Quiñones and Jason Albia</b></span><span>May 2025</span><span>arXiv:2505.22125 [cs.MA]</span><span>Preprint, not peer reviewed</span></p>
+          <div class="rd-actions">
+            <a class="rd-btn solid" href="https://arxiv.org/html/2505.22125v1" target="_blank" rel="noopener"><span>Read the full paper</span><svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+            <a class="rd-btn" href="https://arxiv.org/pdf/2505.22125" target="_blank" rel="noopener"><span>PDF</span><svg aria-hidden="true"><use href="#i-ext"/></svg></a>
+            <button class="rd-btn" type="button" data-copy="#sentiment-simulation"><svg aria-hidden="true"><use href="#i-link"/></svg><span>Copy link</span></button>
+          </div>
+        </div>
+        <div class="rd-banner ac-art paper" aria-hidden="true">
+          <span>Sentiment simulation study · arXiv 2505.22125</span>
+          <b>92<em>%</em></b>
+          <small>Survey-response alignment (QWA) with narrative, contextualized profiles</small>
+        </div>
+      </div>
+    </header>
+
+    <div class="rd-main">
+      <div class="wrap rd-layout">
+        <aside class="rd-toc" aria-label="On this page">
+          <p>On this page</p>
+          <ol>
+            <li><a href="#ssp-findings">Key findings</a></li>
+            <li><a href="#ssp-abstract">Abstract</a></li>
+            <li><a href="#ssp-question">The question</a></li>
+            <li><a href="#ssp-method">How the study worked</a></li>
+            <li><a href="#ssp-results">What it found</a></li>
+            <li><a href="#ssp-matters">Why it matters</a></li>
+            <li><a href="#ssp-cite">Read and cite</a></li>
+          </ol>
+        </aside>
+
+        <div class="rd-body">
+          <section id="ssp-findings" aria-labelledby="ssp-h1">
+            <p class="rd-label">Key findings</p>
+            <h2 id="ssp-h1">Four numbers from the paper</h2>
+            <div class="rd-stats">
+              <div class="rd-stat"><b>92%</b><i aria-hidden="true"></i><span>Survey-response alignment (QWA)</span></div>
+              <div class="rd-stat"><b>81–86%</b><i aria-hidden="true"></i><span>Sentiment accuracy across five national issues</span></div>
+              <div class="rd-stat"><b>88%</b><i aria-hidden="true"></i><span>Peak alignment in framing tests (range 77–88%)</span></div>
+              <div class="rd-stat"><b>≤0.51%</b><i aria-hidden="true"></i><span>Run-to-run variation (standard deviation)</span></div>
+            </div>
+          </section>
+
+          <section id="ssp-abstract" aria-labelledby="ssp-h2">
+            <p class="rd-label">Abstract</p>
+            <h2 id="ssp-h2">From the paper</h2>
+            <div class="rd-abstract">
+              <p>Traditional sentiment analysis relies on surface-level linguistic patterns and retrospective data, limiting its ability to capture the psychological and contextual drivers of human sentiment. These limitations constrain its effectiveness in applications that require predictive insight, such as policy testing, narrative framing, and behavioral forecasting. We present a robust framework for sentiment simulation using generative AI agents embedded with psychologically rich profiles. Agents are instantiated from a nationally representative survey of 2,485 Filipino respondents, combining sociodemographic information with validated constructs of personality traits, values, beliefs, and socio-political attitudes. The framework includes three stages: (1) agent embodiment via categorical or contextualized encodings, (2) exposure to real-world political and economic scenarios, and (3) generation of sentiment ratings accompanied by explanatory rationales. Using Quadratic Weighted Accuracy (QWA), we evaluated alignment between agent-generated and human responses. Contextualized encoding achieved 92% alignment in replicating original survey responses. In sentiment simulation tasks, agents reached 81%–86% accuracy against ground truth sentiment, with contextualized profile encodings significantly outperforming categorical (p &lt; 0.0001, Cohen’s d = 0.70). Simulation results remained consistent across repeated trials (±0.2–0.5% SD) and resilient to variation in scenario framing (p = 0.9676, Cohen’s d = 0.02). Our findings establish a scalable framework for sentiment modeling through psychographically grounded AI agents. This work signals a paradigm shift in sentiment analysis from retrospective classification to prospective and dynamic simulation grounded in psychology of sentiment formation.</p>
+            </div>
+          </section>
+
+          <section id="ssp-question" aria-labelledby="ssp-h3">
+            <p class="rd-label">01 · The question</p>
+            <h2 id="ssp-h3">Reading sentiment after the fact is not enough</h2>
+            <p>Most sentiment analysis labels what people have already said: posts, reviews, survey answers. That shows how people felt, after the fact. It cannot show how a particular group will react to a policy, a message or an event they have not seen yet, and it misses the psychological reasons behind a reaction.</p>
+            <p>The study asks whether AI agents grounded in real psychological data can simulate those reactions before the fact, and explain them.</p>
+          </section>
+
+          <section id="ssp-method" aria-labelledby="ssp-h4">
+            <p class="rd-label">02 · How the study worked</p>
+            <h2 id="ssp-h4">One agent per respondent, three stages</h2>
+            <p>Each AI agent was built from one real respondent in a nationally representative survey of 2,485 Filipinos, sampled across all 17 administrative regions. The 150-item survey covered sociodemographics and validated measures of personality, values, beliefs, and social and political attitudes. All simulations ran on Llama 3.1 70B, an open-weight language model.</p>
+            <div class="rd-methods">
+              <div class="rd-method">
+                <span>Stage 01</span>
+                <h3>Embody</h3>
+                <p>Each agent receives one respondent’s profile, written either as ranked labels such as Low, Moderate or High (categorical) or as a short narrative (contextualized). To check the fit, each agent answers the same survey items its human counterpart answered.</p>
+              </div>
+              <div class="rd-method">
+                <span>Stage 02</span>
+                <h3>Expose</h3>
+                <p>Agents read real-world scenarios on five issues: wage policies, budget transparency, inflation, the justice system and political dynasties. Each scenario is framed positively or negatively, assigned at random.</p>
+              </div>
+              <div class="rd-method">
+                <span>Stage 03</span>
+                <h3>Respond</h3>
+                <p>Each agent rates its sentiment on a five-point scale from negative to positive, explains why, then checks whether its answer is consistent with its profile and the scenario.</p>
+              </div>
+            </div>
+            <p>Answers were scored with Quadratic Weighted Accuracy (QWA): identical answers score 100%, and larger disagreements are penalized more heavily than small ones.</p>
+          </section>
+
+          <section id="ssp-results" aria-labelledby="ssp-h5">
+            <p class="rd-label">03 · What it found</p>
+            <h2 id="ssp-h5">Agents answered, and felt, like the people behind them</h2>
+            <p><strong>They replicated real survey answers.</strong> With narrative (contextualized) profiles, agents matched their human counterparts’ survey answers with 92% alignment on average. Narrative profiles beat label-based ones (Wilcoxon signed-rank test, p &lt; 0.0001; Cohen’s d = 0.70): a 76% chance that a randomly chosen agent with a narrative profile outperforms one with a label-based profile.</p>
+            <p><strong>They simulated sentiment on real issues.</strong> Against ground-truth sentiment, agents reached 81–86% accuracy across the five issues. Narrative profiles scored higher in four of the five, with the largest gain on political dynasties.</p>
+            <div class="rd-table num" role="region" aria-label="Sentiment simulation accuracy by issue" tabindex="0">
+              <table>
+                <thead><tr><th scope="col">Issue</th><th scope="col">Categorical profiles</th><th scope="col">Contextualized profiles</th></tr></thead>
+                <tbody>
+                  <tr><td>Wage policies</td><td>80.3%</td><td>83.4%</td></tr>
+                  <tr><td>Budget transparency</td><td>80.1%</td><td>82.9%</td></tr>
+                  <tr><td>Inflation</td><td>74.9%</td><td>81.8%</td></tr>
+                  <tr><td>Justice system</td><td>86.7%</td><td>86.2%</td></tr>
+                  <tr><td>Political dynasties</td><td>68.4%</td><td>81.2%</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="rd-note">Average accuracy (QWA) over five runs per issue. Source: Table 3, arXiv 2505.22125.</p>
+            <p><strong>Results were stable.</strong> Each issue was simulated five times. Scores barely moved between runs: standard deviations of ±0.17% to ±0.51% with narrative profiles.</p>
+            <p><strong>Framing did not throw the agents off.</strong> Positive versus negative framing made no statistically meaningful difference to accuracy (paired t-test, p = 0.9676; Cohen’s d = 0.02). Alignment stayed between 77% and 88% across issues and framings.</p>
+          </section>
+
+          <section id="ssp-matters" aria-labelledby="ssp-h6">
+            <p class="rd-label">04 · Why it matters</p>
+            <h2 id="ssp-h6">The science under Predikta</h2>
+            <p>This paper is the scientific layer of Predikta’s evidence: agents grounded in Filipino survey data can reproduce how real people answer, and how they feel about real issues. Whether those signals pick winning ads was tested separately, in a blind backtest of 20,000 ad pairs with AdSpark. <a href="#proof-not-promises">Read how that test worked</a>.</p>
+            <div class="rd-callout">
+              <p><strong>Read the limits too.</strong> The paper is a preprint and has not been peer reviewed. Its results describe the scenarios and data it tested; they are not a guarantee of future accuracy.</p>
+            </div>
+          </section>
+
+          <section class="rd-sources" id="ssp-cite" aria-labelledby="ssp-h7">
+            <h2 id="ssp-h7">Read and cite the paper</h2>
+            <p>The full paper, with methods, statistics and references, is on arXiv: <a href="https://arxiv.org/html/2505.22125v1" target="_blank" rel="noopener">HTML</a> · <a href="https://arxiv.org/pdf/2505.22125" target="_blank" rel="noopener">PDF</a> · <a href="https://arxiv.org/abs/2505.22125" target="_blank" rel="noopener">abstract page</a>.</p>
+            <p class="rd-affil">Netopia AI, Inc., Manila · Institute of Statistics, University of the Philippines Los Baños · Department of Psychology, University of the Philippines Diliman</p>
+            <div class="rd-cite" data-noedit>
+              <div class="rd-cite-bar"><span>BibTeX</span><button class="rd-btn sm" type="button" data-copy="ssp-bibtex"><svg aria-hidden="true"><use href="#i-link"/></svg><span>Copy citation</span></button></div>
+<pre id="ssp-bibtex">@misc{tia2025sentiment,
+  title         = {Sentiment Simulation using Generative AI Agents},
+  author        = {Tia, Melrose and Lanuzo, Jezreel Sophia and Baltazar, Lei Rigi
+                   and Lopez-Relente, Marie Joy and Qui{\~n}ones, Diwa Malaya
+                   and Albia, Jason},
+  year          = {2025},
+  eprint        = {2505.22125},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.MA},
+  url           = {https://arxiv.org/abs/2505.22125}
+}</pre>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="rd-next" aria-labelledby="ssp-next">
+      <div class="wrap">
+        <div class="rd-next-head">
+          <h2 id="ssp-next">Keep reading</h2>
+          <a class="link" href="#articles">All articles<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <a class="arts-card" href="#proof-not-promises">
+          <div class="ac-art" aria-hidden="true"><span>Blind backtest with AdSpark</span><b>3.4<em>×</em></b></div>
+          <div class="arts-body">
+            <span class="ac-tag">Article · Research and development</span>
+            <h3>Proof, Not Promises: A New Bar for Behavioral AI</h3>
+            <p>How a blind backtest with AdSpark put Predikta’s scores against real campaign results, and what it means for your next brief.</p>
+            <span class="ac-go">Read the article<svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </article>
 </div>
 
 </main>
@@ -2404,6 +3003,25 @@ body:has(#plans:not([hidden])) .endcap .hero-ctas{display:none}
   </div>
 </div>
 
+<script id="predikta-article-paths">
+/* Article addresses: links already in the press and on netopia.ai
+   (predikta.ai/articles/new-bar-for-behavioral-ai, predikta.ai/articles-external)
+   open the matching in-site page when the host serves this page at those paths. */
+(function(){
+  var map = {
+    '/articles/new-bar-for-behavioral-ai': 'proof-not-promises',
+    '/articles/proof-not-promises': 'proof-not-promises',
+    '/articles/sentiment-simulation': 'sentiment-simulation',
+    '/articles-external': 'articles',
+    '/articles': 'articles'
+  };
+  try {
+    var p = location.pathname.replace(/\/index\.html?$/i, '').replace(/\.html?$/i, '').replace(/\/+$/, '').toLowerCase();
+    var id = map[p];
+    if (id && !location.hash) history.replaceState(null, '', '/' + location.search + '#' + id);
+  } catch (e) {}
+})();
+</script>
 <script>
 (function(){
   'use strict';
@@ -3360,5 +3978,76 @@ body:has(#plans:not([hidden])) .endcap .hero-ctas{display:none}
 
 
 
+
+
+<script id="predikta-articles-js">
+/* Articles: page titles, nav state, copy buttons and the reader's table of contents. */
+(function(){
+  'use strict';
+  var TITLES = {
+    'articles': 'Articles',
+    'proof-not-promises': 'Proof, Not Promises: A New Bar for Behavioral AI',
+    'sentiment-simulation': 'Sentiment Simulation using Generative AI Agents'
+  };
+  var baseTitle = document.title;
+
+  function onPage(id){
+    var t = TITLES[id];
+    document.title = t ? t + ' | Predikta' : baseTitle;
+    if (t) Array.prototype.forEach.call(document.querySelectorAll('[data-nav="articles"]'), function(a){ a.classList.add('is-current'); });
+  }
+  document.addEventListener('pagechange', function(e){ onPage(e.detail && e.detail.id); });
+  var shown = document.querySelector('.page:not([hidden])');
+  if (shown) onPage(shown.id);
+
+  /* copy a link to an article, or a citation */
+  function siteBase(){
+    var o = location.origin;
+    if (!o || o === 'null' || location.protocol === 'file:') return 'https://predikta.ai/';
+    return o + location.pathname.replace(/[^/]*$/, '');
+  }
+  function fallbackCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+    ta.remove(); return ok;
+  }
+  function flash(btn, ok){
+    var label = btn.querySelector('span'); if (!label) return;
+    if (!btn._label) btn._label = label.textContent;
+    label.textContent = ok ? 'Copied' : 'Press Ctrl+C to copy';
+    btn.classList.toggle('is-done', ok);
+    clearTimeout(btn._t);
+    btn._t = setTimeout(function(){ label.textContent = btn._label; btn.classList.remove('is-done'); }, 2200);
+  }
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest && e.target.closest('[data-copy]');
+    if (!btn || document.documentElement.classList.contains('editing')) return;
+    var v = btn.getAttribute('data-copy'), text;
+    if (v.charAt(0) === '#') text = siteBase() + v;
+    else { var src = document.getElementById(v); text = src ? src.textContent : v; }
+    if (navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(function(){ flash(btn, true); }, function(){ flash(btn, fallbackCopy(text)); });
+    } else flash(btn, fallbackCopy(text));
+  });
+
+  /* highlight the section being read in the table of contents */
+  if (!('IntersectionObserver' in window)) return;
+  Array.prototype.forEach.call(document.querySelectorAll('.rd-toc'), function(toc){
+    var links = Array.prototype.slice.call(toc.querySelectorAll('a[href^="#"]'));
+    var targets = links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
+    var visible = {};
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ visible[en.target.id] = en.isIntersecting; });
+      var on = -1;
+      targets.forEach(function(t, i){ if (t && visible[t.id] && on < 0) on = i; });
+      if (on < 0) return;
+      links.forEach(function(a, i){ a.classList.toggle('is-on', i === on); });
+    }, {rootMargin: '-110px 0px -55% 0px', threshold: 0});
+    targets.forEach(function(t){ if (t) io.observe(t); });
+  });
+})();
+</script>
 </body>
 </html>
